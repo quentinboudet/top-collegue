@@ -1,0 +1,11 @@
+<div class="card" >
+  <img class="card-img-top" src="{{collegue.imageUrl}}" />
+  <div class="card-body text-center">
+    <p class="card-text"> {{collegue.nom}}</p>
+    <p class="card-text"> {{collegue.score}}</p>
+  </div>
+  <div class="d-flex card-footer justify-content-center">
+    <button class="btn btn-primary bg-light text-primary" (click)="jaime($event)">J'aime</button>
+    <button class="btn btn-danger bg-light text-danger" (click)="jedeteste($event)">Je deteste</button>
+  </div>
+</div>
