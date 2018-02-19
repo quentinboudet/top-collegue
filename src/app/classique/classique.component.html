@@ -1,6 +1,18 @@
 <div class="row card-deck">
-  <div app-un-collegue class="col-3 p-0" 
-  *ngFor="let col of collegues" 
-  [collegue]="col" 
-  [format]="'classique'"></div>
+  <div class="input-group my-3 col-12 col-md-6">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Limite</span>
+    </div>
+    <input type="number" class="form-control" aria-label="limite" value="0" min="0" #limite (input)="setLimite(limite.value)">
+  </div>
+  <div class="input-group my-3 col-12 col-md-6">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Filtre par pseudo</span>
+    </div>
+    <input type="text" class="form-control" aria-label="filtrepseudo" value="" min="0" #inputFiltrePseudo (input)="setFiltrePseudo(inputFiltrePseudo.value)">
+  </div>
+</div>
+<div class="row card-deck">
+  <div app-un-collegue class="col-3 p-0" *ngFor="let col of collegues | filtrePseudo:filtrePseudoVal | slice:0:nombreAfficher"
+    [collegue]="col" [format]="'classique'"></div>
 </div>

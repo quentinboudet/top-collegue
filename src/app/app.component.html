@@ -3,17 +3,19 @@
   <h4>Les meilleurs collègues du moment</h4>
 </div>
 <div class="container">
-  <form>
-    <div class="form-group row">
-      <label for="ajout-pseudo" class="col-2">Pseudo</label>
+  <form >
+    <div class="form-group row ">
+      <label for="ajout-pseudo" class="col-2 col-form-label">Pseudo</label>
       <input id="ajout-pseudo" class="form-control col-10" type="text" placeholder="Pseudo" #pseudo/>
     </div>
 
     <div class="form-group row">
-      <label for="ajout-img" class="col-2">URL image</label>
+      <label for="ajout-img" class="col-2 col-form-label">URL image</label>
       <input id="ajout-img" class="form-control col-10" type="text" placeholder="URL" #imageUrl/>
     </div>
-    <button class="btn btn-primary" (click)="add(pseudo, imageUrl, $event)">Ajout nouveau collègue</button>
+    <div class="form-group row justify-content-end">
+      <button class="btn btn-primary ml-auto" (click)="add(pseudo, imageUrl, $event)">Ajout nouveau collègue</button>
+    </div>
   </form>
   <div class="my-2 p-4 bg-success text-light d-none" [class.d-block]="pseudoAjout">
     <p class="m-0">Le collègue {{pseudoAjout}} à bien été ajouté.</p>

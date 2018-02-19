@@ -11,6 +11,8 @@ import { UnCollegueComponent } from './un-collegue/un-collegue.component';
 import { ClassiqueComponent } from './classique/classique.component';
 import { TableauComponent } from './tableau/tableau.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
+import { ScorePipe } from './shared/pipe/score.pipe';
+import { FiltrePseudoPipe } from './shared/pipe/filtre-pseudo.pipe';
 
 
 const appRoutes: Routes = [
@@ -27,7 +29,9 @@ const appRoutes: Routes = [
     UnCollegueComponent,
     ClassiqueComponent,
     TableauComponent,
-    CarrouselComponent
+    CarrouselComponent,
+    ScorePipe,
+    FiltrePseudoPipe
   ],
   imports: [
     BrowserModule,

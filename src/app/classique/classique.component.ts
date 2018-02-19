@@ -10,8 +10,11 @@ import { Collegue } from '../shared/domain/collegue';
 })
 export class ClassiqueComponent implements OnInit{
   collegues:Array<Collegue>;
+  nombreAfficher:number;
+  filtrePseudoVal:string;
 
   constructor(private colleguesS:CollegueService) {
+    this.filtrePseudoVal = "";
   }
 
   ngOnInit() {
@@ -20,4 +23,11 @@ export class ClassiqueComponent implements OnInit{
     console.log("classique", this.collegues);
   }
 
+  setLimite(val){
+    if(val > 0) this.nombreAfficher = val;
+    else this.nombreAfficher = this.collegues.length;
+  }
+  setFiltrePseudo(value){
+    this.filtrePseudoVal = value;
+  }
 }

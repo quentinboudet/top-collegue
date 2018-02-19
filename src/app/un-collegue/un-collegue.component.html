@@ -4,8 +4,8 @@
       (error)="defautImage(image)" />
   </div>
   <div class="card-body text-center">
-    <p class="card-text"> {{collegue.pseudo}}</p>
-    <p class="card-text"> {{collegue.score}}</p>
+    <p class="card-text"> {{collegue.pseudo | uppercase}}</p>
+    <p class="card-text" [innerHTML]="collegue.score | score"></p>
   </div>
   <div class="d-flex card-footer justify-content-center">
     <button class="btn btn-primary bg-light text-primary" (click)="jaime($event)">J'aime</button>
@@ -33,7 +33,7 @@
   </td>
 </ng-container>
 
-<ng-container [ngIf]="format == 'carrousel'">
+<ng-container *ngIf="format == 'carrousel'">
     <img src="{{collegue.imageUrl}}" alt="{{collegue.pseudo}}">
     <div class="carousel-caption">
       <h3>{{collegue.pseudo}} {{collegue.score}}</h3>
