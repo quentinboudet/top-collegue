@@ -15,11 +15,14 @@
     </div>
     <button class="btn btn-primary" (click)="add(pseudo, imageUrl, $event)">Ajout nouveau collègue</button>
   </form>
-  <div class="my-2 p-2 bg-success text-light d-none" [class.d-block]="pseudoAjout">
+  <div class="my-2 p-4 bg-success text-light d-none" [class.d-block]="pseudoAjout">
     <p class="m-0">Le collègue {{pseudoAjout}} à bien été ajouté.</p>
   </div>
-  <div class="row card-deck">
-    <app-un-collegue class="col-3" *ngFor="let col of collegues" [collegue]="col"></app-un-collegue>
-  </div>
+  <nav class="nav">
+    <a class="nav-link" routerLinkActive="active" routerLink="/classique">Classique</a>
+    <a class="nav-link" routerLinkActive="active" routerLink="/tableau">Tableau</a>
+    <a class="nav-link" routerLinkActive="active" routerLink="/carrousel">Carrousel</a>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
 {{collegues | json}}

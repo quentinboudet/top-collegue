@@ -1,0 +1,8 @@
+<table>
+  <tr app-un-collegue 
+    *ngFor="let col of collegues" 
+    [collegue]="col" 
+    [format]="'tableau'" 
+    style="max-height: 8rem; overflow:hidden">
+  </tr>
+</table>

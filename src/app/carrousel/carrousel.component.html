@@ -1,0 +1,30 @@
+<ngb-carousel>
+    <ng-template ngbSlide >
+  <div app-un-collegue 
+  *ngFor="let col of collegues" 
+  [collegue]="col" 
+  [format]="'carrousel'"></div>
+  </ng-template>
+</ngb-carousel>
+<!-- <ngb-carousel>
+    <ng-template ngbSlide >
+      <img src="assets/images/anonyme.jpg" alt="coc">
+      <div class="carousel-caption">
+        <h3>coc</h3>
+        <p class="d-flex card-footer justify-content-center">
+          <button class="btn btn-primary bg-light text-primary" >J'aime</button>
+          <button class="btn btn-danger bg-light text-danger" >Je deteste</button>
+        </p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide >
+      <img src="assets/images/anonyme.jpg" alt="coc">
+      <div class="carousel-caption">
+        <h3>coc</h3>
+        <p class="d-flex card-footer justify-content-center">
+          <button class="btn btn-primary bg-light text-primary" >J'aime</button>
+          <button class="btn btn-danger bg-light text-danger" >Je deteste</button>
+        </p>
+      </div>
+    </ng-template>
+</ngb-carousel> -->

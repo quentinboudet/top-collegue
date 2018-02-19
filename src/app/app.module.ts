@@ -1,25 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
+import { CollegueService } from './shared/service/collegue.service';
 
 import { AppComponent } from './app.component';
 import { UnCollegueComponent } from './un-collegue/un-collegue.component';
-import { CollegueService } from './shared/service/collegue.service';
-import { HttpClientModule } from '@angular/common/http';
+import { ClassiqueComponent } from './classique/classique.component';
+import { TableauComponent } from './tableau/tableau.component';
+import { CarrouselComponent } from './carrousel/carrousel.component';
 
+
+const appRoutes: Routes = [
+  { path: 'classique', component: ClassiqueComponent },
+  { path: 'tableau', component: TableauComponent },
+  { path: 'carrousel', component: CarrouselComponent },
+  // { path: 'detail/:pseudo', component: BComponent },
+  { path: '**', redirectTo: 'classique' }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    UnCollegueComponent
-  ], 
+    UnCollegueComponent,
+    ClassiqueComponent,
+    TableauComponent,
+    CarrouselComponent
+  ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [CollegueService], 
+  providers: [CollegueService],
   bootstrap: [AppComponent]
 })
-export class AppModule {  }
+export class AppModule { }
