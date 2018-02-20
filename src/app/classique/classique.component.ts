@@ -18,12 +18,9 @@ export class ClassiqueComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.colleguesS.listerCollegues().subscribe(cols => {
-      console.log("Oninit", cols);
-      this.collegues = cols
-    });
-    // this.collegues = this.colleguesS.listerCollegues();
-    console.log("classique", this.collegues);
+    this.colleguesS.listeColleguesObs.subscribe(cols => this.collegues = cols);
+
+    this.colleguesS.CollegueObs.subscribe(col => this.collegues.push(col));
   }
 
   setLimite(val){

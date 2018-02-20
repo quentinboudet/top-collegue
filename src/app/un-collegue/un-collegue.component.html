@@ -19,8 +19,6 @@
       src="{{collegue.imageUrl}}" 
       alt="{{collegue.pseudo}}" 
       #image 
-      (window:resize)="tailler(image)" 
-      (load)="tailler(image)"
       (error)="defautImage(image)" 
       style="width:200px"/>
   </td>
@@ -34,7 +32,13 @@
 </ng-container>
 
 <ng-container *ngIf="format == 'carrousel'">
-    <img src="{{collegue.imageUrl}}" alt="{{collegue.pseudo}}">
+  <ng-template ngbSlide >
+    <img src="{{collegue.imageUrl}}" 
+      alt="{{collegue.pseudo}}"
+      #image 
+      (window:resize)="tailler(image)" 
+      (load)="tailler(image)"
+      (error)="defautImage(image)" />
     <div class="carousel-caption">
       <h3>{{collegue.pseudo}} {{collegue.score}}</h3>
       <p class="d-flex card-footer justify-content-center">
@@ -42,4 +46,5 @@
         <button class="btn btn-danger bg-light text-danger" (click)="jedeteste($event)">Je deteste</button>
       </p>
     </div>
+  </ng-template>
 </ng-container>

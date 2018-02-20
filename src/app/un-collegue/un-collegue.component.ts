@@ -10,7 +10,10 @@ import { CollegueService } from '../shared/service/collegue.service';
 export class UnCollegueComponent implements OnInit {
   @Input() collegue:Collegue;
   @Input() format:string;
-  scoreAction = {ok: ob => this.collegue = ob, echec: echec => console.log("echec PATCH score", echec) };
+  scoreAction = {
+    ok: ob => this.collegue = ob, 
+    echec: echec => console.log("echec PATCH score", echec) 
+  };
 
   hauteurImage:number;
   imageNotFound:boolean = false;
@@ -34,7 +37,6 @@ export class UnCollegueComponent implements OnInit {
   }
 
   tailler(img: HTMLImageElement){
-    console.log("tailler", img);
     this.hauteurImage = img.width;
   }
 

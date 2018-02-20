@@ -1,10 +1,9 @@
 <ngb-carousel>
-    <ng-template ngbSlide >
-  <div app-un-collegue 
-  *ngFor="let col of collegues" 
-  [collegue]="col" 
-  [format]="'carrousel'"></div>
-  </ng-template>
+    <div app-un-collegue
+      *ngFor="let col of collegues | async" 
+      [collegue]="col" 
+      [format]="'carrousel'">
+    </div>
 </ngb-carousel>
 <!-- <ngb-carousel>
     <ng-template ngbSlide >
