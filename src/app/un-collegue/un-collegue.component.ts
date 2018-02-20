@@ -10,6 +10,7 @@ import { CollegueService } from '../shared/service/collegue.service';
 export class UnCollegueComponent implements OnInit {
   @Input() collegue:Collegue;
   @Input() format:string;
+  scoreAction = {ok: ob => this.collegue = ob, echec: echec => console.log("echec PATCH score", echec) };
 
   hauteurImage:number;
   imageNotFound:boolean = false;
@@ -22,16 +23,14 @@ export class UnCollegueComponent implements OnInit {
     e.preventDefault();
     // événement clic sur le bouton "J'aime"
     // => le score du collègue est augmenté de 10
-    this.collegue.score += 10;
-    this.colleguesS.aimerUnCollegue(this.collegue);
+    this.colleguesS.aimerUnCollegue(this.collegue).subscribe(this.scoreAction.ok, this.scoreAction.echec);
   }
 
   jedeteste(e) {
     e.preventDefault();
     // événement clic sur le bouton "Je déteste"
     // => le score du collègue est diminué de 5
-    this.collegue.score -= 5;
-    this.colleguesS.detesterUnCollegue(this.collegue);
+    this.colleguesS.detesterUnCollegue(this.collegue).subscribe(this.scoreAction.ok, this.scoreAction.echec);
   }
 
   tailler(img: HTMLImageElement){

@@ -15,7 +15,7 @@ export class CarrouselComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.colleguesS.listerCollegues().then(cols => this.collegues = cols);
+    this.colleguesS.listerCollegues().subscribe(cols => this.collegues = cols);
     // this.collegues = this.colleguesS.listerCollegues();
     console.log("classique", this.collegues);
   }

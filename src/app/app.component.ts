@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   add(pseudo:HTMLInputElement, imageUrl:HTMLInputElement ,e){
     e.preventDefault();
     let newCollegue:Collegue = new Collegue(pseudo.value, imageUrl.value, 0);
-    this.colleguesS.sauvegarder(newCollegue).then(response =>{
+    this.colleguesS.sauvegarder(newCollegue).subscribe(response =>{
       this.pseudoAjout = response.pseudo;
       pseudo.value = "";
       imageUrl.value = "";
