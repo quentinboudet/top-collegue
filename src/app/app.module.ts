@@ -13,6 +13,7 @@ import { TableauComponent } from './tableau/tableau.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { ScorePipe } from './shared/pipe/score.pipe';
 import { FiltrePseudoPipe } from './shared/pipe/filtre-pseudo.pipe';
+import { VotreDernierAvisComponent } from './votre-dernier-avis/votre-dernier-avis.component';
 
 
 const appRoutes: Routes = [
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     TableauComponent,
     CarrouselComponent,
     ScorePipe,
-    FiltrePseudoPipe
+    FiltrePseudoPipe,
+    VotreDernierAvisComponent
   ],
   imports: [
     BrowserModule,

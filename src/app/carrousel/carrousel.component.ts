@@ -16,7 +16,7 @@ export class CarrouselComponent implements OnInit {
 
   ngOnInit() {
     this.colleguesS.listeColleguesObs.subscribe(cols => this.collegues = cols);
-    this.colleguesS.CollegueObs.subscribe(col => this.collegues.push(col));
+    this.colleguesS.collegueObs.subscribe(col => this.collegues.push(col));
   }
 
 }

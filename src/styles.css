@@ -39,3 +39,7 @@ pre,
 .carousel-indicators li {
     border-radius:0 !important;
 }
+
+table.table tr td{
+    vertical-align: middle;
+}

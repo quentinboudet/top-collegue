@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Collegue } from './shared/domain/collegue';
 import { CollegueService } from './shared/service/collegue.service';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { CollegueService } from './shared/service/collegue.service';
 export class AppComponent implements OnInit{
   public pseudoAjout:string = "";
 
-  constructor(private colleguesS:CollegueService) {
+  constructor(private colleguesS:CollegueService, private http:HttpClient) {
   }
 
   ngOnInit():void {

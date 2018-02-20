@@ -1,3 +1,4 @@
+<div><span class="badge badge-{{colleguesS.connecter? 'primary': 'danger'}}" >{{colleguesS.connecter? "Online": "Offline"}}</span></div>
 <div class="container text-center">
   <h1>Top Collègues</h1>
   <h4>Les meilleurs collègues du moment</h4>
@@ -14,10 +15,10 @@
       <input id="ajout-img" class="form-control col-10" type="text" placeholder="URL" #imageUrl/>
     </div>
     <div class="form-group row justify-content-end">
-      <button class="btn btn-primary ml-auto" (click)="add(pseudo, imageUrl, $event)">Ajout nouveau collègue</button>
+      <button class="btn btn-primary ml-auto" [disabled]="!colleguesS.connecter" (click)="add(pseudo, imageUrl, $event)">Ajout nouveau collègue</button>
     </div>
   </form>
-  <div class="my-2 p-4 bg-success text-light d-none" [class.d-block]="pseudoAjout">
+  <div class="my-2 p-3 bg-success text-light d-none" [class.d-block]="pseudoAjout">
     <p class="m-0">Le collègue {{pseudoAjout}} à bien été ajouté.</p>
   </div>
   <nav class="nav">
@@ -25,6 +26,8 @@
     <a class="nav-link" routerLinkActive="active" routerLink="/tableau">Tableau</a>
     <a class="nav-link" routerLinkActive="active" routerLink="/carrousel">Carrousel</a>
   </nav>
+  <app-votre-dernier-avis></app-votre-dernier-avis>
   <router-outlet></router-outlet>
+  <app-votre-dernier-avis></app-votre-dernier-avis>
 </div>
 {{collegues | json}}
